@@ -25,6 +25,8 @@ package = false
 # with an Intel Mac wheel keeps that machine on a published, self-contained build.
 constraint-dependencies = [
     "cryptography<49; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    # Everywhere else, the release with the fixes for PYSEC-2026-3552, 3553 and 3554.
+    "cryptography>=50.0.2; sys_platform != 'darwin' or platform_machine != 'x86_64'",
 ]
 
 [tool.uv.workspace]
