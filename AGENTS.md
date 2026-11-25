@@ -11,8 +11,8 @@
 ## Commands
 
 - `make setup`: install every package into one environment with uv.
-- `make check`: ruff, mypy strict and pytest, including the reference evaluation. Run it before every commit.
-- `make eval`: the evaluation gate alone. `make demo`: the no-key demo.
+- `make check`: ruff, mypy strict and pytest. Run it before every commit.
+- `make purity`: the clean-room scan and the Markdown link check.
 
 ## Rules
 
@@ -21,7 +21,8 @@
 - Never move a case's state from a tool or a prompt; tools propose, `CaseEngine.fire` decides.
 - Any tool that sends outside is `Risk.SEND` and is declared in the taint guard's controls.
 - Made-up data only, on `example.com`, `example.net` or `example.org`.
+- A change other repos depend on ships as a tagged release; the agent repos bump the tag in their own pull requests.
 
 ## Where Things Go
 
-Shared behavior goes in `packages/`; anything specific to one application (prompts, tools, its state machine, its policies) stays in that application under `apps/`.
+Everything here is shared by the agent repos: the model layer, tools and hooks, state machines, retrieval, evaluation, recording, MCP, telemetry, integrations and the repository checks. Anything specific to one agent (prompts, tools, its state machine, its documents) belongs in that agent's repo.

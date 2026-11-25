@@ -32,7 +32,7 @@ What a reviewer checks on every pull request, in order of what costs most when m
 
 ## Design
 
-- Shared behavior lives in `packages/`; one application's policy lives in its `apps/` folder.
+- Shared behavior lives in this runtime's `packages/`; one agent's policy lives in that agent's repo.
 - A decision someone will ask "why" about has an ADR.
 - The change is the smallest that solves the problem; unrelated cleanup is its own pull request.
 

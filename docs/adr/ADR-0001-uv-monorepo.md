@@ -2,6 +2,8 @@
 
 Status: accepted, 2026-11-22.
 
+
+Amended 2026-11-25: the six agents moved to their own repos, each installing a tagged release of this runtime; the runtime itself stays one uv workspace with one lockfile.
 ## Table of Contents
 
 - [Context](#context)

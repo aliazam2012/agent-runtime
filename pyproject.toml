@@ -1,7 +1,7 @@
 [project]
-name = "freight-agents"
+name = "agent-runtime"
 version = "0.1.0"
-description = "Reliable agent workflows for freight operations, on a shared platform"
+description = "A Python runtime for agents that act on real systems: typed tools behind hooks, state machines with timers, approvals, evaluation gates, record and replay, MCP"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12"
@@ -10,9 +10,7 @@ requires-python = ">=3.12"
 dev = [
     "mypy>=1.13",
     "opentelemetry-sdk>=1.27",
-    "pandas-stubs>=2.2",
     "pre-commit>=4",
-    "playwright>=1.49",
     "pytest>=8.3",
     "reportlab>=4.2",
     "types-reportlab>=4.2",
@@ -30,7 +28,7 @@ constraint-dependencies = [
 ]
 
 [tool.uv.workspace]
-members = ["packages/*", "apps/*", "services/*"]
+members = ["packages/*", "services/*"]
 
 [tool.ruff]
 line-length = 100
@@ -46,12 +44,6 @@ namespace_packages = true
 explicit_package_bases = true
 warn_unreachable = true
 
-# scikit-learn and statsmodels ship no type information; their calls are
-# confined to models.py, behind typed wrappers.
-[[tool.mypy.overrides]]
-module = ["sklearn.*", "statsmodels.*"]
-ignore_missing_imports = true
-
 [tool.pytest.ini_options]
-testpaths = ["packages", "apps", "services", "tools"]
+testpaths = ["packages", "services"]
 addopts = "-q --import-mode=importlib --strict-markers"

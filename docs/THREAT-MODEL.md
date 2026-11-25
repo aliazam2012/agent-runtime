@@ -19,6 +19,8 @@ Everything in an email (sender, subject, body, attachment names and contents) is
 
 ## Threats and Controls
 
+The runtime's guards apply to every agent; a row that names an agent is enforced in that agent's repo.
+
 | Threat | Control | Where |
 |---|---|---|
 | Prompt injection steers a send to an attacker | Every email value is tainted; a tainted recipient is refused unless it is the claimant; any recipient other than the claimant is refused | taint_guard, recipient_policy |

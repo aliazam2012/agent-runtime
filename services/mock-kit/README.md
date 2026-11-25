@@ -1,6 +1,6 @@
 # mock-kit
 
-Idempotency-Key handling and problem details shared by the made-up services ([mock-tms](../mock-tms/), [mock-carrier](../mock-carrier/)), following the IETF HTTPAPI draft "The Idempotency-Key HTTP Header Field" (draft 09, read 2026-11-23).
+Idempotency-Key handling and problem details shared by the made-up services ([mock-tms](https://github.com/aliazam2012/edi-pdf-order-intake/tree/main/services/mock-tms), [mock-carrier](https://github.com/aliazam2012/carrier-claims-filing/tree/main/services/mock-carrier)), following the IETF HTTPAPI draft "The Idempotency-Key HTTP Header Field" (draft 09, read 2026-11-23).
 
 ## Table of Contents
 
